@@ -1,0 +1,1063 @@
+# MASTER PROJECT PROMPT — EduPath
+I want to develop a professional full-stack web application called **EduPath – Student Learning & Career Guidance Platform** using the **MERN Stack**.
+
+## 1. Project Overview
+EduPath is a web platform designed mainly for school students, especially students studying for **O/L and A/L**.
+
+The main problem I want to solve is that many students:
+
+- Struggle to find good classes for specific subjects.
+- Do not know which teachers/resource persons are suitable for them.
+- Have difficulty finding reliable educational resources.
+- Are confused about what to do after O/L.
+- Are confused about what to do after A/L.
+- Do not know about university degree options, professional qualifications, career paths, and alternative education pathways.
+- Need guidance from experienced teachers, university students, career advisors, and industry professionals.
+The goal of EduPath is to provide a **single platform where students can discover classes, teachers/resource persons, educational resources, and education/career pathways**.
+
+The application should be designed as a real-world product rather than a simple CRUD project.
+
+---
+
+# 2. Technology Stack
+Use the following technologies:
+
+### Frontend
+
+- React.js
+- React Router
+- JavaScript
+- HTML5
+- CSS3
+- Tailwind CSS or another modern UI framework
+- Axios
+- React Context API or another suitable state management solution
+
+### Backend
+
+- Node.js
+- Express.js
+- JavaScript
+- RESTful APIs
+- JWT authentication
+- bcrypt/password hashing
+- Middleware
+- Input validation
+- Centralized error handling
+
+### Database
+
+- MongoDB
+- Mongoose
+
+### Development Tools
+
+- VS Code
+- Git
+- GitHub
+- Postman
+
+### Deployment
+The project should be designed so that the frontend can be deployed to Vercel and the backend can be deployed to Render/Railway or another suitable platform.
+
+---
+
+# 3. Main User Roles
+The system should have three major roles.
+
+## Student
+Students should be able to:
+
+- Register
+- Login
+- Create/update profile
+- Select education level
+- Search for classes
+- Search for teachers/resource persons
+- Filter classes
+- View teacher/resource-person profiles
+- View educational resources
+- Explore O/L → A/L pathways
+- Explore A/L → higher education/career pathways
+- Save/bookmark classes and resource persons
+- Give reviews and ratings
+- Book/contact resource persons
+- Receive notifications
+- Get personalized recommendations
+
+---
+
+## Resource Person
+Resource persons may include:
+
+- School teachers
+- Tuition teachers
+- Career advisors
+- University students
+- Industry professionals
+- Subject specialists
+- Educational counselors
+They should be able to:
+
+- Register
+- Create a professional profile
+- Add qualifications
+- Add experience
+- Add subjects
+- Add classes
+- Add class schedules
+- Add location
+- Add online/physical class information
+- Upload educational resources
+- Manage availability
+- View student bookings
+- Respond to students
+- Receive reviews
+Resource persons should require **admin approval** before becoming publicly visible.
+
+---
+
+## Admin
+Admin should be able to:
+
+- Login
+- Manage students
+- Manage resource persons
+- Approve/reject resource-person profiles
+- Manage classes
+- Manage educational resources
+- Manage subjects
+- Manage career pathways
+- Manage reviews
+- Manage reports
+- Manage inappropriate content
+- View platform statistics
+- Manage users
+
+---
+
+# 4. Main Modules
+The application should contain the following modules.
+
+## Module 1 — Authentication
+Implement:
+
+- Student registration
+- Resource person registration
+- Login
+- Logout
+- JWT authentication
+- Password hashing using bcrypt
+- Role-based authorization
+- Protected routes
+- Token handling
+- User profile management
+Example roles:
+
+```
+student
+resource_person
+admin
+```
+
+---
+
+# 5. Student Dashboard
+After login, the student should see a personalized dashboard.
+
+Example:
+
+```
+Welcome back!
+
+Education Level: O/L
+
+Quick Actions:
+
+[ Find Classes ]
+[ Find Teachers ]
+[ Educational Resources ]
+[ O/L → A/L Guidance ]
+[ Career Guidance ]
+
+Recommended For You:
+- Mathematics Class
+- Science Resource
+- Career Pathway
+```
+The dashboard should change according to the student's education level and interests.
+
+---
+
+# 6. Find Classes Module
+Students should be able to search for classes.
+
+Search/filter options:
+
+- Education level
+- Grade
+- O/L / A/L
+- Subject
+- Medium
+- District
+- City
+- Physical/Online
+- Class type
+- Rating
+- Price range if applicable
+Example:
+
+```
+Education Level: O/L
+Subject: Mathematics
+Medium: Tamil
+Location: Vavuniya
+Class Type: Physical
+Minimum Rating: 4
+```
+Display class cards containing:
+
+- Class name
+- Teacher name
+- Subject
+- Education level
+- Medium
+- Location
+- Class type
+- Rating
+- Short description
+- View Details button
+Students should be able to open a complete class details page.
+
+---
+
+# 7. Resource Person Directory
+Create a dedicated resource-person directory.
+
+Students can search/filter resource persons based on:
+
+- Role
+- Subject
+- Education level
+- Experience
+- Location
+- Medium
+- Rating
+Example resource-person profile:
+
+```
+Name
+Profile Image
+
+Role:
+Mathematics Teacher
+
+Qualifications:
+BSc / BEd / etc.
+
+Experience:
+8 years
+
+Subjects:
+Mathematics
+
+Education Levels:
+O/L
+
+Medium:
+Tamil / English
+
+Location:
+Vavuniya
+
+Rating:
+4.8/5
+
+[View Profile]
+[Contact]
+[Book Session]
+```
+The full profile should include:
+
+- About
+- Qualifications
+- Experience
+- Subjects
+- Classes
+- Educational resources
+- Availability
+- Reviews
+
+---
+
+# 8. Educational Resources Module
+Create a resource library.
+
+Resources can include:
+
+- Notes
+- Past papers
+- Model papers
+- Revision materials
+- Study guides
+- Syllabus information
+- Useful external learning links
+Resources should be categorized by:
+
+```
+Education Level
+    ↓
+Grade / O/L / A/L
+    ↓
+Subject
+    ↓
+Resource Type
+```
+Example:
+
+```
+O/L
+ ├── Mathematics
+ │   ├── Notes
+ │   ├── Past Papers
+ │   └── Model Papers
+ │
+ ├── Science
+ │   ├── Notes
+ │   └── Past Papers
+ │
+ └── English
+     ├── Notes
+     └── Model Papers
+```
+
+---
+
+# 9. O/L → A/L Guidance Module
+Create a dedicated section called:
+
+**"What should I do after O/L?"**
+
+Students should be able to explore:
+
+- A/L streams
+- Subject combinations
+- Higher education possibilities
+- Professional qualifications
+- Career possibilities
+- Alternative education pathways
+Create an interactive guidance flow.
+
+Example:
+
+```
+What are you interested in?
+
+Technology
+Medicine
+Engineering
+Business
+Law
+Design
+Teaching
+Government Sector
+Other
+```
+Then provide relevant educational pathways.
+
+The system should clearly explain that these are **guidance/recommendations and not guaranteed career outcomes**.
+
+---
+
+# 10. A/L → Higher Education & Career Guidance
+Create another module:
+
+**"What can I do after A/L?"**
+
+Students should be able to explore:
+
+- University degrees
+- Higher education
+- Professional qualifications
+- Vocational education
+- IT careers
+- Government careers
+- Private-sector careers
+- Entrepreneurship
+- Study-abroad pathways
+Example:
+
+```
+A/L
+ ↓
+Higher Education
+ ↓
+Degree / Professional Qualification
+ ↓
+Entry-Level Career
+ ↓
+Career Progression
+```
+Example career roadmap:
+
+```
+A/L
+ ↓
+ICT Degree
+ ↓
+Junior Software Engineer
+ ↓
+Software Engineer
+ ↓
+Senior Software Engineer
+ ↓
+Tech Lead
+```
+
+---
+
+# 11. Recommendation System
+Create a personalized recommendation system.
+
+Students can enter:
+
+- Favourite subjects
+- Education level
+- O/L results
+- A/L stream
+- Interests
+- Skills
+- Preferred career areas
+Initially implement a **rule-based recommendation system** instead of complex machine learning.
+
+For example:
+
+```
+If:
+Mathematics = strong
+Science = strong
+Interest = Technology
+
+Recommend:
+- Software Engineering
+- Data Science
+- Cyber Security
+- AI/ML
+```
+The architecture should allow a future AI/ML recommendation system to replace or improve the rule-based system.
+
+---
+
+# 12. Reviews and Ratings
+Students should be able to review:
+
+- Classes
+- Resource persons
+Review fields:
+
+```
+Rating: 1–5 stars
+Comment
+```
+Implement:
+
+- Average rating calculation
+- Review listing
+- Review creation
+- Review deletion/editing where appropriate
+- Admin moderation
+- Report review functionality
+Prevent duplicate or abusive reviews where appropriate.
+
+---
+
+# 13. Booking System
+Students should be able to request/book:
+
+- Consultation sessions
+- Guidance sessions
+- Resource-person sessions
+Booking should contain:
+
+```
+Student
+Resource Person
+Date
+Time
+Purpose
+Status
+```
+Possible statuses:
+
+```
+pending
+approved
+rejected
+completed
+cancelled
+```
+Resource persons should be able to manage booking requests.
+
+---
+
+# 14. Notifications
+Create a notification system.
+
+Examples:
+
+- Booking approved
+- Booking rejected
+- New review
+- Resource person approved
+- New educational resource
+- Important announcement
+
+---
+
+# 15. Admin Dashboard
+Create a professional admin dashboard.
+
+Display:
+
+```
+Total Students
+Total Resource Persons
+Pending Approvals
+Total Classes
+Total Resources
+Total Reviews
+Total Bookings
+```
+Add charts where appropriate.
+
+Admin should be able to manage the entire platform.
+
+---
+
+# 16. Database Design
+Design appropriate MongoDB collections/models.
+
+Possible models:
+
+```
+User
+StudentProfile
+ResourcePersonProfile
+Class
+Subject
+Resource
+Review
+Booking
+CareerPath
+EducationPath
+Notification
+Report
+```
+Use Mongoose schemas and proper relationships/references.
+
+Before coding, explain:
+
+- Each collection
+- Important fields
+- Relationships
+- Why each field is required
+- Example MongoDB documents
+
+---
+
+# 17. REST API Design
+Create a proper REST API architecture.
+
+Example:
+
+### Authentication
+
+```
+POST /api/auth/register
+POST /api/auth/login
+POST /api/auth/logout
+GET  /api/auth/me
+```
+
+### Students
+
+```
+GET    /api/students/profile
+PUT    /api/students/profile
+```
+
+### Resource Persons
+
+```
+GET    /api/resource-persons
+GET    /api/resource-persons/:id
+POST   /api/resource-persons
+PUT    /api/resource-persons/:id
+DELETE /api/resource-persons/:id
+```
+
+### Classes
+
+```
+GET    /api/classes
+GET    /api/classes/:id
+POST   /api/classes
+PUT    /api/classes/:id
+DELETE /api/classes/:id
+```
+
+### Resources
+
+```
+GET    /api/resources
+GET    /api/resources/:id
+POST   /api/resources
+PUT    /api/resources/:id
+DELETE /api/resources/:id
+```
+
+### Reviews
+
+```
+POST   /api/reviews
+GET    /api/reviews
+PUT    /api/reviews/:id
+DELETE /api/reviews/:id
+```
+
+### Bookings
+
+```
+POST   /api/bookings
+GET    /api/bookings
+PUT    /api/bookings/:id
+```
+
+### Career Guidance
+
+```
+GET /api/career-paths
+GET /api/career-paths/:id
+POST /api/recommendations
+```
+Design all APIs following REST principles.
+
+---
+
+# 18. Frontend Pages
+Create a professional responsive interface.
+
+Required pages:
+
+```
+/
+Home
+
+/login
+/register
+
+/student/dashboard
+
+/classes
+/classes/:id
+
+/resource-persons
+/resource-persons/:id
+
+/resources
+/resources/:id
+
+/guidance/ol-to-al
+/guidance/al-to-career
+
+/recommendations
+
+/bookings
+
+/profile
+
+/admin/dashboard
+
+/admin/users
+/admin/resource-persons
+/admin/classes
+/admin/resources
+/admin/reviews
+```
+
+---
+
+# 19. UI/UX Requirements
+The design should look like a real modern education platform.
+
+Use:
+
+- Clean layout
+- Responsive design
+- Mobile-friendly interface
+- Cards
+- Navigation bar
+- Sidebar dashboard
+- Search bars
+- Filters
+- Forms
+- Modals where appropriate
+- Loading states
+- Error states
+- Empty states
+- Success messages
+- Confirmation dialogs
+Do not make the UI look like a basic student CRUD project.
+
+Use a consistent design system.
+
+---
+
+# 20. Backend Architecture
+Use a clean architecture.
+
+Suggested structure:
+
+```
+backend/
+│
+├── config/
+├── controllers/
+├── middleware/
+├── models/
+├── routes/
+├── services/
+├── utils/
+├── validators/
+├── app.js
+├── server.js
+├── .env
+└── package.json
+```
+Explain the responsibility of each folder.
+
+---
+
+# 21. Frontend Architecture
+Suggested structure:
+
+```
+frontend/
+│
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── layouts/
+│   ├── hooks/
+│   ├── services/
+│   ├── context/
+│   ├── utils/
+│   ├── assets/
+│   ├── routes/
+│   ├── App.jsx
+│   └── main.jsx
+│
+└── package.json
+```
+Use reusable components instead of duplicating code.
+
+---
+
+# 22. Security
+Implement basic web security practices:
+
+- Password hashing
+- JWT authentication
+- Role-based authorization
+- Input validation
+- Protected API routes
+- CORS configuration
+- Environment variables
+- Do not expose database credentials
+- Proper error handling
+- Sanitize/validate user input
+- Rate limiting where appropriate
+Never hardcode:
+
+```
+MongoDB URI
+JWT secret
+API keys
+Passwords
+```
+Use `.env`.
+
+---
+
+# 23. API Interaction
+Clearly demonstrate how React communicates with the Express backend.
+
+Architecture:
+
+```
+React Frontend
+      |
+      | HTTP Request
+      ↓
+Express REST API
+      |
+      ↓
+Controller
+      |
+      ↓
+Service / Business Logic
+      |
+      ↓
+Mongoose
+      |
+      ↓
+MongoDB
+```
+Explain every stage in simple language.
+
+Example:
+
+```
+Student clicks "Find Classes"
+        ↓
+React sends GET request
+        ↓
+Express receives request
+        ↓
+Controller processes request
+        ↓
+Mongoose queries MongoDB
+        ↓
+MongoDB returns classes
+        ↓
+Express sends JSON response
+        ↓
+React displays class cards
+```
+
+---
+
+# 24. GitHub
+Create a professional GitHub repository.
+
+Use meaningful commits such as:
+
+```
+Initial project setup
+Add MongoDB connection
+Implement user authentication
+Add student dashboard
+Add resource person module
+Add class search
+Add educational resources
+Add career guidance
+Add booking system
+Add admin dashboard
+Improve responsive UI
+Fix authentication bug
+```
+Create a professional README containing:
+
+- Project overview
+- Problem statement
+- Features
+- Technology stack
+- System architecture
+- Screenshots
+- API documentation
+- Installation instructions
+- Environment variables
+- Database design
+- Future improvements
+
+---
+
+# 25. Deployment
+Prepare the application for deployment.
+
+Frontend:
+
+```
+Vercel
+```
+Backend:
+
+```
+Render / Railway
+```
+Database:
+
+```
+MongoDB Atlas
+```
+Use environment variables for production configuration.
+
+Explain how to deploy each part.
+
+---
+
+# 26. Future Improvements
+Design the project so the following can be added later:
+
+- AI career assistant
+- AI-powered recommendations
+- Chat between students and resource persons
+- Online classes
+- Payment integration
+- Video consultation
+- Advanced analytics
+- Mobile application
+- Email notifications
+- SMS notifications
+- Machine-learning career recommendation
+- Sinhala/Tamil/English multilingual support
+
+---
+
+# 27. Important Development Rule
+Do NOT generate the entire application at once.
+
+I am learning MERN and want to understand what I am building.
+
+Develop the project step-by-step.
+
+For every step:
+
+1. Explain the concept in simple English.
+2. Explain why we need it.
+3. Show the folder/file structure.
+4. Give the exact commands.
+5. Give the complete code.
+6. Explain important parts of the code.
+7. Tell me how to run it.
+8. Tell me how to test it.
+9. Explain common errors and how to fix them.
+10. Only move to the next step after the current step is working.
+Assume I have basic programming knowledge but I am still learning MERN.
+
+Do not skip important concepts.
+
+---
+
+# 28. Development Order
+Follow this order:
+
+### Step 1
+Project requirements and system architecture.
+
+### Step 2
+Create GitHub repository.
+
+### Step 3
+Create MERN project structure.
+
+### Step 4
+Set up React frontend.
+
+### Step 5
+Set up Node.js + Express backend.
+
+### Step 6
+Connect MongoDB.
+
+### Step 7
+Create User model.
+
+### Step 8
+Implement registration/login.
+
+### Step 9
+Implement JWT authentication.
+
+### Step 10
+Implement role-based authorization.
+
+### Step 11
+Create Student profile.
+
+### Step 12
+Create Resource Person profile.
+
+### Step 13
+Create Subjects and Classes.
+
+### Step 14
+Implement class search/filtering.
+
+### Step 15
+Create Resource Library.
+
+### Step 16
+Create Reviews and Ratings.
+
+### Step 17
+Create Booking System.
+
+### Step 18
+Create O/L → A/L Guidance.
+
+### Step 19
+Create A/L → Career Guidance.
+
+### Step 20
+Create Recommendation System.
+
+### Step 21
+Create Notifications.
+
+### Step 22
+Create Admin Dashboard.
+
+### Step 23
+Improve UI/UX and responsiveness.
+
+### Step 24
+Testing.
+
+### Step 25
+Deploy.
+
+### Step 26
+Create professional GitHub README.
+
+### Step 27
+Prepare CV project description.
+
+---
+
+# 29. Final Goal
+The final application should demonstrate that I understand:
+
+- React
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- REST APIs
+- API integration
+- JWT authentication
+- Authorization
+- CRUD operations
+- Database design
+- Search/filtering
+- Role-based systems
+- Business logic
+- Error handling
+- Git/GitHub
+- Deployment
+- Responsive UI
+- Real-world software development
+The final project should be professional enough to include in my **Software Engineering / Software Developer internship CV and portfolio**.
+
+Start by giving me:
+
+1. Final project requirements
+2. Functional requirements
+3. Non-functional requirements
+4. User roles
+5. Complete system architecture
+6. Database design
+7. API architecture
+8. Frontend page structure
+9. Development roadmap
+Do NOT start coding yet. First help me understand and design the complete system.                                                                                                  can you develop the whole system ??

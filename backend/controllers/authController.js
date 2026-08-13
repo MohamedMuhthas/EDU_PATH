@@ -31,4 +31,10 @@ const login = async (req, res) => {
   res.json({ token, user: { id: user._id, name: user.name, email: user.email, role: user.role } });
 };
 
-module.exports = { register, login };
+const me = async (req, res) => {
+  // `req.user` is attached by auth middleware
+  if (!req.user) return res.status(401).json({ message: 'Unauthorized' });
+  res.json({ user: req.user });
+};
+
+module.exports = { register, login, me };

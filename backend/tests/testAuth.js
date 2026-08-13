@@ -32,6 +32,12 @@ async function run() {
     console.log('Logging in user...');
     const login = await axios.post(`${BASE}/api/auth/login`, { email: testUser.email, password: testUser.password });
     console.log('Login response:', login.data.user.email, 'token length:', (login.data.token || '').length);
+
+    // call protected endpoint
+    const token = login.data.token;
+    console.log('Calling protected /api/auth/me');
+    const me = await axios.get(`${BASE}/api/auth/me`, { headers: { Authorization: `Bearer ${token}` } });
+    console.log('/api/auth/me response:', me.data.user.email, me.data.user.role);
   } catch (err) {
     if (err.response) console.error('Login failed:', err.response.data);
     else console.error('Login error:', err.message);
